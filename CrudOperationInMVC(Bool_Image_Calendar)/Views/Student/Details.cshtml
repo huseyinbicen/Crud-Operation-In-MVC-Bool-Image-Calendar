@@ -1,0 +1,74 @@
+﻿@model CrudOperationInMVC_Bool_Image_Calendar_.Models.tblStudent
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblStudent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </dt>
+
+        <dd>
+            @if (Model.IsDeleted == true)
+            {
+                <text>Active</text>
+            }
+            else
+            {
+                <text>Passive</text>
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentImage)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.StudentImage)" height="100" width="100" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Birthday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Birthday)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblDepartment.DeparttmentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblDepartment.DeparttmentName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
